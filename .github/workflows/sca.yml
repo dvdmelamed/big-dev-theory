@@ -1,11 +1,6 @@
 name: Dependency Check (SCA)
 
-on:
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ main ]
-  merge_group:
-    branches: [ main]
+on: [push]
 
 # Declare default permissions as read only.
 permissions: read-all
