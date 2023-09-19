@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   scan-pr-attempt:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     name: Container scanning
     steps:
       - name: Checkout code
