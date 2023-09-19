@@ -7,10 +7,18 @@ permissions: read-all
 
 jobs:
   scan-pr-attempt:
-    name: "Run scanner on new code"
-    uses: google/osv-scanner/actions/scanner@main
-    with:
-      results-format: json
-      results-file: new-results.json
-      to-scan: .
-    continue-on-error: true
+    runs-on: ubuntu-latest
+    name: Run-Depedency-Check
+    steps:
+      - uses: actions/checkout@v1
+      - uses: google/osv-scanner/actions/scanner@main
+        with:
+          results-format: json
+          results-file: new-results.json
+          to-scan: .
+        continue-on-error: true
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: sca_scan
+          path: new-results.json
