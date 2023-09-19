@@ -8,7 +8,7 @@ permissions: read-all
 jobs:
   scan-pr-attempt:
     runs-on: ubuntu-latest
-    name: Run-Depedency-Check
+    name: Run-Dependency-Check
     steps:
       - uses: actions/checkout@v1
       - uses: google/osv-scanner/actions/scanner@main
